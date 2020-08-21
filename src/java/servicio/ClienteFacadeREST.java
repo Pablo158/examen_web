@@ -71,8 +71,21 @@ public class ClienteFacadeREST extends AbstractFacade<Cliente> {
      
       super.edit(ob);
       return "Se actualizo con exito";
+    
+     }
+     
+      @POST
+    @Path("editar")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+     public String editar (@FormParam ("idCliente") String idCliente, @FormParam ("nombre") String nombre, @FormParam ("apellido") String apellido, @FormParam ("cedula") String cedula, @FormParam ("direccion") String direccion, @FormParam ("edad") String edad, @FormParam ("provincia") String provincia, @FormParam ("vehiculoCompro") String vehiculoCompro){          
+     Cliente obb = super.find(idCliente);
+     
+     obb.setNombre(nombre);
+     
      
      }
+      
+      
 
     @GET
     @Path("{id}")
