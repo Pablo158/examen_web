@@ -81,6 +81,14 @@ public class ClienteFacadeREST extends AbstractFacade<Cliente> {
      Cliente obb = super.find(idCliente);
      
      obb.setNombre(nombre);
+     obb.setApellido(apellido);
+     obb.setDireccion(direccion);
+      obb.setEdad(edad);
+      obb.setProvincia(provincia);
+      obb.setVehiculoCompro(vehiculoCompro);
+      
+      super.edit(obb);
+     return "Se actualizo";
      
      
      }
